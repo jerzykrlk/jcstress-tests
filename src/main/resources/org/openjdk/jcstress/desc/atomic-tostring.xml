@@ -1,0 +1,19 @@
+<test name="pl.erizo.concurrent.firstsample.AnExampleTest">
+    <contributed-by>psiqta</contributed-by>
+    <description>
+        Tests the thread-safeness of the StringUtil class.
+    </description>
+    <case>
+        <match>[1, 1]</match>
+        <expect>ACCEPTABLE</expect>
+        <description>
+            Acceptable to see true.
+        </description>
+    </case>
+    <unmatched>
+        <expect>FORBIDDEN</expect>
+        <description>
+            Other cases are not expected. -1 would mean an exception raised.
+        </description>
+    </unmatched>
+</test>
