@@ -4,7 +4,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.github.erizo.gradle:jcstress-gradle-plugin:0.1"
+        classpath "com.github.erizo.gradle:jcstress-gradle-plugin:0.2"
     }
 }
 
@@ -17,18 +17,8 @@ apply plugin: 'jcstress'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-jcstress {
-    jcstressDependency 'com.github.erizo.gradle:org.openjdk.jcstress.jcstress-core:0.1'
-}
-
 repositories {
     jcenter()
     mavenLocal()
-}
-repositories {
     mavenCentral()
-    /** TODO: add this via plugin */
-    maven {
-        url "http://dl.bintray.com/jerzykrlk/maven"
-    }
 }
