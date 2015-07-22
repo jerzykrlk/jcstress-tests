@@ -5,7 +5,7 @@ import org.openjdk.jcstress.infra.results.IntResult2;
 
 @JCStressTest
 @Description("Tests the thread-safeness of the StringUtil class.")
-@Outcome(id = "[1, 1]", expect = Expect.ACCEPTABLE, desc = "Acceptable to see true.")
+@Outcome(id = "[1, 1]", expect = Expect.ACCEPTABLE, desc = "Acceptable to see 2.")
 @Outcome(expect = Expect.FORBIDDEN, desc = "Other cases are not expected. -1 would mean an exception raised.")
 @State
 public class AnExampleTest {

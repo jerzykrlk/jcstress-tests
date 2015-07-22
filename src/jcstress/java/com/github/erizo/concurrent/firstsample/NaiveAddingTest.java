@@ -9,7 +9,7 @@ import org.openjdk.jcstress.infra.results.IntResult2;
 @Outcome(id = "[2]", expect = Expect.ACCEPTABLE, desc = "Acceptable to see true.")
 @Outcome(expect = Expect.FORBIDDEN, desc = "Other cases are not expected.")
 @State
-public class AddingTest {
+public class NaiveAddingTest {
 
     private volatile int x;
 
