@@ -7,8 +7,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @JCStressTest
 @Description("Tests the thread-safeness of incrementAndGet.")
-@Outcome(id = "[2]", expect = Expect.ACCEPTABLE, desc = "Acceptable to see 2.")
-@Outcome(expect = Expect.FORBIDDEN, desc = "Other cases are not expected.")
+@Outcome.Outcomes({
+        @Outcome(id = "[2]", expect = Expect.ACCEPTABLE, desc = "Acceptable to see 2."),
+        @Outcome(expect = Expect.FORBIDDEN, desc = "Other cases are not expected.")
+})
 @State
 public class AtomicAddingTest {
 

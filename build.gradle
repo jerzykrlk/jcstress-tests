@@ -4,7 +4,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.github.erizo.gradle:jcstress-gradle-plugin:0.2"
+        classpath "com.github.erizo.gradle:jcstress-gradle-plugin:0.3"
     }
 }
 
