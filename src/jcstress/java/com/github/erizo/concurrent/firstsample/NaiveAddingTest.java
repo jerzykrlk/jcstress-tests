@@ -6,8 +6,10 @@ import org.openjdk.jcstress.infra.results.IntResult2;
 
 @JCStressTest
 @Description("Tests the thread-safeness of x++.")
-@Outcome(id = "[2]", expect = Expect.ACCEPTABLE, desc = "Acceptable to see true.")
-@Outcome(expect = Expect.FORBIDDEN, desc = "Other cases are not expected.")
+@Outcome.Outcomes({
+        @Outcome(id = "[2]", expect = Expect.ACCEPTABLE, desc = "Acceptable to see true."),
+        @Outcome(expect = Expect.FORBIDDEN, desc = "Other cases are not expected.")
+})
 @State
 public class NaiveAddingTest {
 
