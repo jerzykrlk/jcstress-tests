@@ -4,7 +4,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.github.erizo.gradle:jcstress-gradle-plugin:0.3"
+        classpath "com.github.erizo.gradle:jcstress-gradle-plugin:0.4-SNAPSHOT"
     }
 }
 
@@ -16,6 +16,12 @@ apply plugin: 'jcstress'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+jcstress {
+    verbose = true
+    timeMillis = "200"
+    yield = true
+}
 
 repositories {
     jcenter()
