@@ -1,8 +1,13 @@
 package com.github.erizo.concurrent.firstsample;
 
-import org.openjdk.jcstress.annotations.*;
-import org.openjdk.jcstress.infra.results.IntResult1;
-import org.openjdk.jcstress.infra.results.IntResult2;
+import org.openjdk.jcstress.annotations.Actor;
+import org.openjdk.jcstress.annotations.Arbiter;
+import org.openjdk.jcstress.annotations.Description;
+import org.openjdk.jcstress.annotations.Expect;
+import org.openjdk.jcstress.annotations.JCStressTest;
+import org.openjdk.jcstress.annotations.Outcome;
+import org.openjdk.jcstress.annotations.State;
+import org.openjdk.jcstress.infra.results.I_Result;
 
 @JCStressTest
 @Description("Tests the thread-safeness of x++.")
@@ -26,7 +31,7 @@ public class NaiveAddingTest {
     }
 
     @Arbiter
-    public void arbiter(IntResult1 result) {
+    public void arbiter(I_Result result) {
         result.r1 = x;
     }
 

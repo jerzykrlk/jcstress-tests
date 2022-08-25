@@ -1,11 +1,5 @@
-buildscript {
-    repositories {
-        mavenLocal()
-        jcenter()
-    }
-    dependencies {
-        classpath "com.github.erizo.gradle:jcstress-gradle-plugin:0.6"
-    }
+plugins {
+    id "io.github.reyerizo.gradle.jcstress" version "0.8.13"
 }
 
 group 'com.github.erizo.jcstress'
@@ -20,11 +14,10 @@ targetCompatibility = 1.8
 jcstress {
     verbose = true
     timeMillis = "200"
-    yield = true
+    forks = 0
 }
 
 repositories {
-    jcenter()
-    mavenLocal()
     mavenCentral()
+    mavenLocal()
 }

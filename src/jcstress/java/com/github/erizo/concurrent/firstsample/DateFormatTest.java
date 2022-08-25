@@ -1,7 +1,13 @@
 package com.github.erizo.concurrent.firstsample;
 
-import org.openjdk.jcstress.annotations.*;
-import org.openjdk.jcstress.infra.results.BooleanResult2;
+import org.openjdk.jcstress.annotations.Actor;
+import org.openjdk.jcstress.annotations.Arbiter;
+import org.openjdk.jcstress.annotations.Description;
+import org.openjdk.jcstress.annotations.Expect;
+import org.openjdk.jcstress.annotations.JCStressTest;
+import org.openjdk.jcstress.annotations.Outcome;
+import org.openjdk.jcstress.annotations.State;
+import org.openjdk.jcstress.infra.results.ZZ_Result;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,7 +26,7 @@ public class DateFormatTest {
     private String date2;
 
     @Actor
-    public void actor1()  {
+    public void actor1() {
         try {
             Date parse = new SimpleDateFormat("yyyy-MM-dd").parse("2007-12-03");
             date1 = dateFormat.format(parse);
@@ -29,7 +35,7 @@ public class DateFormatTest {
     }
 
     @Actor
-    public void actor2()  {
+    public void actor2() {
         try {
             Date parse = new SimpleDateFormat("yyyy-MM-dd").parse("2008-11-02");
             date2 = dateFormat.format(parse);
@@ -38,7 +44,7 @@ public class DateFormatTest {
     }
 
     @Arbiter
-    public void arbiter(BooleanResult2 booleanResult2) {
+    public void arbiter(ZZ_Result booleanResult2) {
         if ("2007-12-03".equals(date1)) {
             booleanResult2.r1 = true;
         }
