@@ -1,5 +1,10 @@
-plugins {
-    id "io.github.reyerizo.gradle.jcstress" version "0.8.13"
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'io.github.reyerizo.gradle:jcstress-gradle-plugin:0.8.14-SNAPSHOT'
+    }
 }
 
 group 'com.github.erizo.jcstress'
